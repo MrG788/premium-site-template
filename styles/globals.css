@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 body {
-  @apply bg-amber-50 text-neutral-900 antialiased;
+  background: red;
 }
+
 
 /* nice smooth scrolling */
 html {
