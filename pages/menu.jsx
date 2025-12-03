@@ -26,23 +26,29 @@ export default function MenuPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-amber-50 text-neutral-900">
+    <main className="min-h-screen bg-amber-50">
       <NavBar />
-
       <section className="mx-auto max-w-7xl px-4 py-12">
-        <h1 className="text-3xl font-bold tracking-tight">Menu</h1>
-        <p className="mt-2 text-sm text-neutral-700">
-          All drinks available with oat, almond and soy milk for an extra 50p. Ask
-          about seasonal specials.
-        </p>
+        <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight">Menu</h1>
+            <p className="mt-2 text-sm text-neutral-700 max-w-xl">
+              All drinks are available with oat, almond or soy milk for an extra
+              50p. Ask about seasonal specials and guest beans on pour over.
+            </p>
+          </div>
+          <p className="text-xs text-neutral-500">
+            Prices are for reference in the demo,
+            final pricing would match the client menu.
+          </p>
+        </div>
 
-        <div className="mt-8 grid md:grid-cols-3 gap-8">
+        <div className="mt-10 grid gap-8 md:grid-cols-3">
           <MenuSection title="Coffee" items={coffee} />
           <MenuSection title="Iced and cold" items={cold} />
           <MenuSection title="Pastries" items={pastries} />
         </div>
       </section>
-
       <Footer />
     </main>
   );
@@ -50,11 +56,14 @@ export default function MenuPage() {
 
 function MenuSection({ title, items }) {
   return (
-    <div className="rounded-2xl border border-neutral-200 bg-white p-6">
+    <div className="rounded-2xl border border-neutral-200 bg-white/90 p-6 shadow-sm">
       <h2 className="text-lg font-semibold tracking-tight">{title}</h2>
       <ul className="mt-4 space-y-3 text-sm">
-        {items.map((item, i) => (
-          <li key={i} className="flex items-center justify-between">
+        {items.map((item) => (
+          <li
+            key={item.name}
+            className="flex items-center justify-between text-neutral-800"
+          >
             <span>{item.name}</span>
             <span className="font-medium">{item.price}</span>
           </li>
