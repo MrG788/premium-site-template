@@ -58,21 +58,22 @@ export default function TakeawayPage() {
         <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
           <div>
             <h1 className="text-3xl font-bold tracking-tight">
-              Takeaway ordering demo
+              Order takeaway coffee and pastries
             </h1>
             <p className="mt-2 max-w-2xl text-sm text-neutral-700">
-              This page shows how a coffee shop site can handle simple ecommerce; 
-              customers pick drinks and pastries, see a running total and confirm an order,
-              while a real project could connect this to payments or an in store ticket system.
+              This page shows a simple takeaway flow. Guests pick drinks and
+              pastries, see a running total and confirm an order. In a real build
+              this could send a ticket to the barista screen or connect to a
+              payment system.
             </p>
           </div>
           <p className="text-xs text-neutral-500">
-            This is a demo, no real orders are placed.
+            Demo only, no real orders are placed.
           </p>
         </div>
 
         <div className="mt-8 grid gap-8 lg:grid-cols-3">
-          {/* Left side menu */}
+          {/* Menu side */}
           <div className="space-y-6 lg:col-span-2">
             <Card title="Hot drinks">
               <ItemGrid
@@ -97,7 +98,7 @@ export default function TakeawayPage() {
             </Card>
           </div>
 
-          {/* Basket */}
+          {/* Basket side */}
           <div className="space-y-4">
             <Card title="Your basket">
               {basket.length === 0 ? (
@@ -163,7 +164,7 @@ export default function TakeawayPage() {
               {submitted && (
                 <p className="mt-3 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs text-emerald-700">
                   Demo complete, in a live build this order would be sent to the
-                  coffee shop as an email, ticket or on screen dashboard.
+                  cafe as an email, ticket or on screen dashboard.
                 </p>
               )}
             </Card>
