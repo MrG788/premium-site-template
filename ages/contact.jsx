@@ -6,15 +6,17 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-amber-50">
       <NavBar />
+
       <section className="mx-auto max-w-7xl grid gap-10 px-4 py-12 md:grid-cols-2">
+        {/* Left side text and form */}
         <div>
           <h1 className="text-3xl font-bold tracking-tight">
             Contact and visit
           </h1>
           <p className="mt-2 text-sm text-neutral-700">
-            Use this page to show clients a simple contact and location layout,
-            with a clear form, visit details and a map area that can later be
-            replaced with a live Google Maps embed.
+            Use this page to show how a contact and location layout would look.
+            In a real project the form would send enquiries to the business via
+            email or a CRM.
           </p>
 
           <form className="mt-6 space-y-4 text-sm">
@@ -38,15 +40,16 @@ export default function ContactPage() {
               Send message
             </button>
             <p className="text-xs text-neutral-500">
-              In a real build this form would send enquiries to the business by
-              email or to a CRM.
+              Demo only, this form does not send emails yet.
             </p>
           </form>
         </div>
+
+        {/* Right side map and details */}
         <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
           <div className="grid h-64 place-items-center bg-amber-100 text-sm text-neutral-600">
-            Map embed placeholder,
-            a Google Maps iframe would go here.
+            Map embed placeholder  
+            (Google Maps iframe would go here)
           </div>
           <div className="space-y-2 border-t border-neutral-100 p-6 text-sm text-neutral-800">
             <p className="font-semibold">Hearth and Bean Coffee Co.</p>
@@ -54,12 +57,12 @@ export default function ContactPage() {
             <p className="mt-2">Phone: +44 7857 480130</p>
             <p>Email: hello@hearthbean.co.uk</p>
             <p className="mt-2 text-xs text-neutral-500">
-              Opening times and more location details can sit here or be moved to
-              a dedicated visit section on the homepage.
+              Opening times and more visit info can live here or on the homepage.
             </p>
           </div>
         </div>
       </section>
+
       <Footer />
     </main>
   );
