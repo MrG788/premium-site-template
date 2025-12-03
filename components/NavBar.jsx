@@ -18,18 +18,18 @@ export default function NavBar() {
             </span>
           </div>
         </Link>
+
         <nav className="hidden items-center gap-6 text-sm md:flex">
           <NavLink href="/">Home</NavLink>
           <NavLink href="/menu">Menu</NavLink>
           <NavLink href="/takeaway">Takeaway</NavLink>
           <NavLink href="/contact">Contact</NavLink>
-        <Link
-  href="/takeaway"
-  className="rounded-xl bg-neutral-900 px-3 py-2 text-xs font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-neutral-800"
->
-  Order online
-</Link>
-
+          <Link
+            href="/shop"
+            className="rounded-xl bg-neutral-900 px-3 py-2 text-xs font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-neutral-800"
+          >
+            Shop merch
+          </Link>
         </nav>
       </div>
     </header>
@@ -42,8 +42,7 @@ function NavLink({ href, children }) {
       href={href}
       className="relative text-neutral-600 transition hover:text-neutral-900"
     >
-      <span>{children}</span>
-      <span className="absolute inset-x-0 -bottom-1 h-[2px] scale-x-0 rounded-full bg-amber-500 transition group-hover:scale-x-100" />
+      {children}
     </Link>
   );
 }
