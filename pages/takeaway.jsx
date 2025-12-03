@@ -36,6 +36,7 @@ export default function TakeawayPage() {
         type,
       },
     ]);
+    setSubmitted(false);
   }
 
   function removeItem(id) {
@@ -50,22 +51,34 @@ export default function TakeawayPage() {
   }
 
   return (
-    <main className="min-h-screen bg-amber-50 text-neutral-900">
+    <main className="min-h-screen bg-amber-50">
       <NavBar />
 
       <section className="mx-auto max-w-7xl px-4 py-10">
-        <h1 className="text-3xl font-bold tracking-tight">Order takeaway</h1>
-        <p className="mt-2 text-sm text-neutral-700 max-w-2xl">
-          Build a quick takeaway order to show how online ordering would work.
-          This demo does not take payment but it clearly displays ecommerce
-          capabilities for clients.
-        </p>
+        <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight">
+              Takeaway ordering demo
+            </h1>
+            <p className="mt-2 max-w-2xl text-sm text-neutral-700">
+              This page shows how a coffee shop site can handle simple ecommerce; 
+              customers pick drinks and pastries, see a running total and confirm an order,
+              while a real project could connect this to payments or an in store ticket system.
+            </p>
+          </div>
+          <p className="text-xs text-neutral-500">
+            This is a demo, no real orders are placed.
+          </p>
+        </div>
 
-        <div className="mt-8 grid lg:grid-cols-3 gap-8">
-          {/* Menu columns */}
-          <div className="lg:col-span-2 space-y-6">
+        <div className="mt-8 grid gap-8 lg:grid-cols-3">
+          {/* Left side menu */}
+          <div className="space-y-6 lg:col-span-2">
             <Card title="Hot drinks">
-              <ItemGrid items={DRINKS} onAdd={(item) => addItem(item, "drink")} />
+              <ItemGrid
+                items={DRINKS}
+                onAdd={(item) => addItem(item, "drink")}
+              />
             </Card>
 
             <Card title="Pastries and bakes">
@@ -89,7 +102,8 @@ export default function TakeawayPage() {
             <Card title="Your basket">
               {basket.length === 0 ? (
                 <p className="text-sm text-neutral-600">
-                  No items yet. Tap "Add" on drinks or pastries to build an order.
+                  No items yet. Tap "Add" on any drink or pastry to start building
+                  a takeaway order.
                 </p>
               ) : (
                 <ul className="space-y-2 text-sm">
@@ -110,7 +124,7 @@ export default function TakeawayPage() {
                         </span>
                         <button
                           onClick={() => removeItem(item.id)}
-                          className="text-xs px-2 py-1 rounded-lg border border-neutral-300 hover:bg-neutral-100"
+                          className="rounded-lg border border-neutral-300 px-2 py-1 text-xs hover:bg-neutral-100"
                         >
                           Remove
                         </button>
@@ -129,27 +143,27 @@ export default function TakeawayPage() {
             </Card>
 
             <Card title="Pickup details">
-              <label className="block text-xs font-medium text-neutral-700 mb-1">
+              <label className="mb-1 block text-xs font-medium text-neutral-700">
                 Notes for barista
               </label>
               <textarea
                 rows={3}
                 className="w-full rounded-xl border border-neutral-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
-                placeholder="Extra hot, no foam, call when ready, etc."
+                placeholder="Extra hot, no foam, call when ready, allergies, etc."
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
               />
               <button
                 onClick={submitOrder}
                 disabled={basket.length === 0}
-                className="mt-4 w-full px-4 py-3 rounded-xl bg-amber-900 text-amber-50 text-sm font-medium disabled:bg-neutral-300 disabled:text-neutral-600"
+                className="mt-4 w-full rounded-xl bg-neutral-900 px-4 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-neutral-800 disabled:cursor-not-allowed disabled:bg-neutral-300 disabled:text-neutral-600"
               >
                 Confirm takeaway order
               </button>
               {submitted && (
-                <p className="mt-3 text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2">
-                  Demo complete - in a real build this order would be sent to the
-                  coffee shop as a ticket, email or on screen dashboard.
+                <p className="mt-3 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs text-emerald-700">
+                  Demo complete, in a live build this order would be sent to the
+                  coffee shop as an email, ticket or on screen dashboard.
                 </p>
               )}
             </Card>
@@ -181,17 +195,17 @@ function ItemGrid({ items, onAdd, small }) {
       {items.map((item) => (
         <div
           key={item.id}
-          className="rounded-xl border border-neutral-200 bg-neutral-50 p-3 flex flex-col justify-between"
+          className="flex flex-col justify-between rounded-xl border border-neutral-200 bg-neutral-50 p-3 transition hover:-translate-y-0.5 hover:border-amber-300 hover:bg-white hover:shadow-sm"
         >
           <div>
             <p className="text-sm font-medium">{item.name}</p>
-            <p className="text-xs text-neutral-600 mt-1">
+            <p className="mt-1 text-xs text-neutral-600">
               £{item.price.toFixed(2)}
             </p>
           </div>
           <button
             onClick={() => onAdd(item)}
-            className="mt-3 text-xs px-3 py-2 rounded-xl bg-neutral-900 text-white hover:bg-neutral-800"
+            className="mt-3 rounded-xl bg-neutral-900 px-3 py-2 text-xs font-semibold text-white hover:bg-neutral-800"
           >
             Add
           </button>
