@@ -23,12 +23,13 @@ export default function NavBar() {
           <NavLink href="/menu">Menu</NavLink>
           <NavLink href="/takeaway">Takeaway</NavLink>
           <NavLink href="/contact">Contact</NavLink>
-          <Link
-            href="/takeaway"
-            className="rounded-xl bg-neutral-900 px-3 py-2 text-xs font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-neutral-800"
-          >
-            Order online
-          </Link>
+        <Link
+  href="/takeaway"
+  className="rounded-xl bg-neutral-900 px-3 py-2 text-xs font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-neutral-800"
+>
+  Order online
+</Link>
+
         </nav>
       </div>
     </header>
