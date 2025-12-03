@@ -3,5 +3,16 @@
 @tailwind utilities;
 
 body {
-  background: #fff8e6;
+  @apply bg-amber-50 text-neutral-900 antialiased;
+}
+
+/* nice smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* basic focus style */
+:focus-visible {
+  outline: 2px solid #f59e0b;
+  outline-offset: 2px;
 }
