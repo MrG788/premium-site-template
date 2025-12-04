@@ -26,21 +26,24 @@ export default function MenuPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-amber-50">
+    <main className="min-h-screen bg-gradient-to-b from-amber-50 to-amber-100">
       <NavBar />
       <section className="mx-auto max-w-7xl px-4 py-12">
-        <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">Menu</h1>
-            <p className="mt-2 text-sm text-neutral-700 max-w-xl">
+            <h1 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
+              Menu
+            </h1>
+            <p className="mt-2 max-w-xl text-sm text-neutral-700">
               All drinks are available with oat, almond or soy milk for an extra
-              50p. Ask about seasonal specials and guest beans on pour over.
+              50p. Seasonal specials and guest beans rotate regularly, so the
+              blackboard in store always has something new.
             </p>
           </div>
-          <p className="text-xs text-neutral-500">
-            Prices are for reference in the demo,
-            final pricing would match the client menu.
-          </p>
+          <div className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs text-amber-900 max-w-xs">
+            Prices and items shown here are for demo purposes. A live site would
+            reflect the coffee shop menu and pricing exactly.
+          </div>
         </div>
 
         <div className="mt-10 grid gap-8 md:grid-cols-3">
@@ -56,7 +59,7 @@ export default function MenuPage() {
 
 function MenuSection({ title, items }) {
   return (
-    <div className="rounded-2xl border border-neutral-200 bg-white/90 p-6 shadow-sm">
+    <div className="rounded-2xl border border-neutral-200 bg-white/95 p-6 shadow-sm">
       <h2 className="text-lg font-semibold tracking-tight">{title}</h2>
       <ul className="mt-4 space-y-3 text-sm">
         {items.map((item) => (
