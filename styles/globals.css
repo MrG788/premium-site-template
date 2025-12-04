@@ -2,18 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-amber-50 text-neutral-900 antialiased;
-}
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap");
 
-
-
-/* nice smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* basic focus style */
+body {
+  @apply bg-amber-50 text-neutral-900 antialiased;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Display font for headings */
+.font-display {
+  font-family: "Playfair Display", ui-serif, Georgia, "Times New Roman", serif;
+}
+
+/* Simple focus style */
 :focus-visible {
   outline: 2px solid #f59e0b;
   outline-offset: 2px;
