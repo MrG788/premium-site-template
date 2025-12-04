@@ -51,24 +51,24 @@ export default function TakeawayPage() {
   }
 
   return (
-    <main className="min-h-screen bg-amber-50">
+    <main className="min-h-screen bg-gradient-to-b from-amber-50 to-amber-100">
       <NavBar />
 
       <section className="mx-auto max-w-7xl px-4 py-10">
         <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">
-              Order takeaway coffee and pastries
+            <h1 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
+              Takeaway ordering demo
             </h1>
             <p className="mt-2 max-w-2xl text-sm text-neutral-700">
-              This page shows a simple takeaway flow. Guests pick drinks and
-              pastries, see a running total and confirm an order. In a real build
-              this could send a ticket to the barista screen or connect to a
-              payment system.
+              Show how a coffee shop site can let guests build a quick takeaway
+              order. Drinks, pastries and extras go into a basket, totals update
+              in real time and a simple confirmation finishes the flow.
             </p>
           </div>
-          <p className="text-xs text-neutral-500">
-            Demo only, no real orders are placed.
+          <p className="rounded-2xl border border-neutral-200 bg-white/90 px-4 py-3 text-xs text-neutral-600 max-w-xs">
+            This is a demo only. For a real project, the final button could send
+            an email, print a ticket or integrate with a payment provider.
           </p>
         </div>
 
@@ -103,8 +103,8 @@ export default function TakeawayPage() {
             <Card title="Your basket">
               {basket.length === 0 ? (
                 <p className="text-sm text-neutral-600">
-                  No items yet. Tap "Add" on any drink or pastry to start building
-                  a takeaway order.
+                  No items yet. Tap Add on any drink or pastry to start a
+                  takeaway order.
                 </p>
               ) : (
                 <ul className="space-y-2 text-sm">
@@ -150,7 +150,7 @@ export default function TakeawayPage() {
               <textarea
                 rows={3}
                 className="w-full rounded-xl border border-neutral-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
-                placeholder="Extra hot, no foam, call when ready, allergies, etc."
+                placeholder="Extra hot, no foam, allergies, call when ready, etc."
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
               />
@@ -163,8 +163,8 @@ export default function TakeawayPage() {
               </button>
               {submitted && (
                 <p className="mt-3 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs text-emerald-700">
-                  Demo complete, in a live build this order would be sent to the
-                  cafe as an email, ticket or on screen dashboard.
+                  Demo complete. In a live setup this would create an order for
+                  the team in store.
                 </p>
               )}
             </Card>
@@ -179,7 +179,7 @@ export default function TakeawayPage() {
 
 function Card({ title, children }) {
   return (
-    <section className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm">
+    <section className="rounded-2xl border border-neutral-200 bg-white/95 p-5 shadow-sm">
       <h2 className="text-lg font-semibold tracking-tight">{title}</h2>
       <div className="mt-4">{children}</div>
     </section>
