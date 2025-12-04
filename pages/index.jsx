@@ -25,6 +25,36 @@ export default function Home() {
     { label: "Events per month", value: "4" },
   ];
 
+  const reviews = [
+    {
+      name: "Amira",
+      role: "Regular since 2020",
+      text: "Best flat white in town. Staff remember my order and there is always a quiet table when I need to work.",
+      rating: 5,
+    },
+    {
+      name: "Lewis",
+      role: "Weekend brunch guest",
+      text: "Croissants are ridiculous and the cinnamon buns sell out fast. Love that I can order ahead when it is busy.",
+      rating: 5,
+    },
+    {
+      name: "Noah",
+      role: "Coffee enthusiast",
+      text: "Great rotating single origins and friendly cupping sessions. It feels more like a tiny community roastery.",
+      rating: 5,
+    },
+  ];
+
+  const gallery = [
+    "https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1464306076886-da185f6a9d05?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1493770348161-369560ae357d?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1521017432531-fbd92d090162?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1453614512568-c4024d13c247?q=80&w=1200&auto=format&fit=crop",
+  ];
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-amber-50 via-amber-50 to-amber-100">
       <NavBar />
@@ -155,8 +185,8 @@ export default function Home() {
             </h2>
             <p className="mt-3 text-sm text-neutral-700">
               The merch page demonstrates ecommerce capability with branded mugs,
-              beans and accessories. It is a clean example you can point to when
-              clients ask about selling products on their site.
+              beans and accessories. It is a clear example to share when clients
+              ask about selling products through their site.
             </p>
             <ul className="mt-4 space-y-2 text-sm text-neutral-700">
               <li>• Add mugs, beans and tote bags to a basket</li>
@@ -170,6 +200,75 @@ export default function Home() {
               Visit the merch demo
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <section className="mx-auto max-w-7xl px-4 pb-16">
+        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
+              What guests say
+            </h2>
+            <p className="mt-2 text-sm text-neutral-700 max-w-xl">
+              A simple reviews section like this helps build trust. For a live
+              project you could sync this with Google or Facebook reviews.
+            </p>
+          </div>
+          <p className="text-xs text-neutral-500">
+            Static demo reviews for design purposes.
+          </p>
+        </div>
+        <div className="mt-6 grid gap-6 md:grid-cols-3">
+          {reviews.map((r) => (
+            <figure
+              key={r.name}
+              className="rounded-2xl border border-neutral-200 bg-white/95 p-6 shadow-sm"
+            >
+              <div className="flex items-center gap-2 text-amber-500 text-xs">
+                {"★★★★★".slice(0, r.rating)}
+              </div>
+              <blockquote className="mt-3 text-sm text-neutral-800">
+                “{r.text}”
+              </blockquote>
+              <figcaption className="mt-4 text-sm font-medium text-neutral-900">
+                {r.name}
+                <span className="block text-xs font-normal text-neutral-500">
+                  {r.role}
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section className="mx-auto max-w-7xl px-4 pb-20">
+        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
+              Inside Hearth and Bean
+            </h2>
+            <p className="mt-2 text-sm text-neutral-700 max-w-xl">
+              A simple gallery helps clients imagine how their own photography
+              would look on the site. These images are using royalty free cafe
+              photography for demo.
+            </p>
+          </div>
+        </div>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {gallery.map((src, index) => (
+            <div
+              key={src}
+              className="overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100"
+            >
+              <img
+                src={src}
+                alt={`Cafe photo ${index + 1}`}
+                className="h-52 w-full object-cover transition hover:scale-105"
+              />
+            </div>
+          ))}
         </div>
       </section>
 
