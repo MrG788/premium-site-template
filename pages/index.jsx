@@ -11,7 +11,7 @@ export default function Home() {
     },
     {
       title: "Fresh bakes every morning",
-      text: "Croissants, buns and cakes from local bakers, delivered before doors open.",
+      text: "Croissants, buns and cakes from local bakers delivered before doors open.",
     },
     {
       title: "Space to work and unwind",
@@ -21,7 +21,7 @@ export default function Home() {
 
   const stats = [
     { label: "Origins on rotation", value: "6" },
-    { label: "Seats in store", value: "80+" },
+    { label: "Seats in store", value: "80 plus" },
     { label: "Events per month", value: "4" },
   ];
 
@@ -35,7 +35,7 @@ export default function Home() {
     {
       name: "Lewis",
       role: "Weekend brunch guest",
-      text: "Croissants are ridiculous and the cinnamon buns sell out fast. Love that I can order ahead when it is busy.",
+      text: "Croissants are amazing and the cinnamon buns sell out fast. Love that I can order ahead when it is busy.",
       rating: 5,
     },
     {
@@ -82,7 +82,7 @@ export default function Home() {
             </h1>
             <p className="mt-4 max-w-lg text-sm text-white/85 md:text-base">
               Hearth and Bean is a neighbourhood coffee shop where beans, bakes and
-              people come together. Order ahead on busy days, or stay for a slow
+              people come together. Order ahead on busy days or stay for a slow
               morning with good coffee and a quiet corner.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -120,12 +120,10 @@ export default function Home() {
             </div>
             <div className="grid gap-4 md:grid-cols-2">
               <div className="rounded-2xl border border-white/15 bg-white/8 p-4 text-xs text-white/85 backdrop-blur shadow-sm">
-                Open from 7:30 on weekdays, 8:00 on Saturdays and 9:00 on Sundays.
-                Free wifi, laptop friendly tables and plug sockets by most benches.
+                Open from seven thirty on weekdays, eight on Saturdays and nine on Sundays.
               </div>
               <div className="rounded-2xl border border-white/15 bg-white/8 p-4 text-xs text-white/85 backdrop-blur shadow-sm">
-                Find us at 14 Market Street, just off the main square. Buses stop
-                two minutes away and parking is available on Oak Street.
+                Find us at fourteen Market Street near the main square.
               </div>
             </div>
           </div>
@@ -147,13 +145,12 @@ export default function Home() {
                 {h.title}
               </h3>
               <p className="mt-2 text-sm text-neutral-700">{h.text}</p>
-              <div className="mt-4 h-[2px] w-12 rounded-full bg-amber-300 transition-all group-hover:w-16 group-hover:bg-amber-400" />
             </article>
           ))}
         </div>
       </section>
 
-      {/* Two callouts: takeaway and merch */}
+      {/* Callouts */}
       <section className="mx-auto max-w-7xl px-4 pb-16">
         <div className="grid gap-8 md:grid-cols-2">
           <div className="rounded-3xl border border-neutral-200 bg-white/90 p-6 shadow-sm md:p-8">
@@ -161,16 +158,8 @@ export default function Home() {
               Order ahead on busy mornings
             </h2>
             <p className="mt-3 text-sm text-neutral-700">
-              Use the takeaway page to demonstrate how guests can build a simple
-              coffee and pastry order, see a clear total and confirm pickup. In a
-              real project you can connect this to payment or an in store ticket
-              system.
+              The takeaway page shows how guests can build a simple coffee and pastry order.
             </p>
-            <ul className="mt-4 space-y-2 text-sm text-neutral-700">
-              <li>• Add drinks, pastries and extras to a basket</li>
-              <li>• See prices and total update in real time</li>
-              <li>• Add notes for the barista such as extra hot or no foam</li>
-            </ul>
             <Link
               href="/takeaway"
               className="mt-5 inline-block rounded-xl bg-neutral-900 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-neutral-800"
@@ -184,15 +173,8 @@ export default function Home() {
               Show a simple online shop
             </h2>
             <p className="mt-3 text-sm text-neutral-700">
-              The merch page demonstrates ecommerce capability with branded mugs,
-              beans and accessories. It is a clear example to share when clients
-              ask about selling products through their site.
+              The merch page demonstrates ecommerce capability.
             </p>
-            <ul className="mt-4 space-y-2 text-sm text-neutral-700">
-              <li>• Add mugs, beans and tote bags to a basket</li>
-              <li>• See totals update as items are added and removed</li>
-              <li>• In a full build this could link to Stripe or Shopify</li>
-            </ul>
             <Link
               href="/shop"
               className="mt-5 inline-block rounded-xl border border-neutral-900 px-5 py-3 text-sm font-semibold text-neutral-900 shadow-sm transition hover:-translate-y-0.5 hover:bg-neutral-900 hover:text-white"
@@ -205,20 +187,9 @@ export default function Home() {
 
       {/* Reviews */}
       <section className="mx-auto max-w-7xl px-4 pb-16">
-        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
-              What guests say
-            </h2>
-            <p className="mt-2 text-sm text-neutral-700 max-w-xl">
-              A simple reviews section like this helps build trust. For a live
-              project you could sync this with Google or Facebook reviews.
-            </p>
-          </div>
-          <p className="text-xs text-neutral-500">
-            Static demo reviews for design purposes.
-          </p>
-        </div>
+        <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
+          What guests say
+        </h2>
         <div className="mt-6 grid gap-6 md:grid-cols-3">
           {reviews.map((r) => (
             <figure
@@ -244,29 +215,26 @@ export default function Home() {
 
       {/* Gallery */}
       <section className="mx-auto max-w-7xl px-4 pb-20">
-        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
-              Inside Hearth and Bean
-            </h2>
-            <p className="mt-2 text-sm text-neutral-700 max-w-xl">
-              A simple gallery helps clients imagine how their own photography
-              would look on the site. These images are using royalty free cafe
-              photography for demo.
-            </p>
-          </div>
-        </div>
+        <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
+          Inside Hearth and Bean
+        </h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {gallery.map((src, index) => (
             <div
-              key={src}
+              key={index}
               className="overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100"
             >
-              <img
-                src={src}
-                alt={`Cafe photo ${index + 1}`}
-                className="h-52 w-full object-cover transition hover:scale-105"
-              />
+              {src ? (
+                <img
+                  src={src}
+                  alt={`Cafe photo ${index + 1}`}
+                  className="h-52 w-full object-cover transition hover:scale-105"
+                />
+              ) : (
+                <div className="grid h-52 w-full place-items-center text-xs text-neutral-500">
+                  Photo coming soon
+                </div>
+              )}
             </div>
           ))}
         </div>
