@@ -29,30 +29,31 @@ export default function Home() {
     {
       name: "Amira",
       role: "Regular since 2020",
-      text: "Best flat white in town. Staff remember my order and there is always a quiet table when I need to work.",
+      text: "Best flat white in town. Staff always remember my order and there is always a quiet seat when I need to work.",
       rating: 5,
     },
     {
       name: "Lewis",
       role: "Weekend brunch guest",
-      text: "Croissants are amazing and the cinnamon buns sell out fast. Love that I can order ahead when it is busy.",
+      text: "Croissants are amazing. The cinnamon buns sell out fast. Love that I can order ahead when it is busy.",
       rating: 5,
     },
     {
       name: "Noah",
       role: "Coffee enthusiast",
-      text: "Great rotating single origins and friendly cupping sessions. It feels more like a tiny community roastery.",
+      text: "Great rotating single origins and friendly cupping sessions. It feels like a tiny community roastery.",
       rating: 5,
     },
   ];
 
+  // NEW curated gallery images
   const gallery = [
-    "https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1464306076886-da185f6a9d05?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1493770348161-369560ae357d?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1521017432531-fbd92d090162?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1453614512568-c4024d13c247?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1600&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1600&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1600&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1453614512568-c4024d13c247?q=80&w=1600&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1464306076886-da185f6a9d05?q=80&w=1600&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1521017432531-fbd92d090162?q=80&w=1600&auto=format&fit=crop",
   ];
 
   return (
@@ -76,14 +77,14 @@ export default function Home() {
               Skelmersdale coffee and bakehouse
             </p>
             <h1 className="font-display mt-3 text-4xl font-extrabold tracking-tight text-white md:text-6xl">
-              Coffee roasted in house,
+              Coffee roasted in house
               <br />
-              pastries baked the same morning.
+              pastries baked the same morning
             </h1>
             <p className="mt-4 max-w-lg text-sm text-white/85 md:text-base">
               Hearth and Bean is a neighbourhood coffee shop where beans, bakes and
-              people come together. Order ahead on busy days or stay for a slow
-              morning with good coffee and a quiet corner.
+              people come together. Order ahead or stay for a quiet morning with
+              good company.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
@@ -100,37 +101,10 @@ export default function Home() {
               </Link>
             </div>
           </div>
-
-          {/* Hero side cards */}
-          <div className="flex flex-1 flex-col gap-4 md:pl-4">
-            <div className="grid gap-4 md:grid-cols-2">
-              {stats.map((s) => (
-                <div
-                  key={s.label}
-                  className="rounded-2xl border border-white/15 bg-white/8 p-5 text-white backdrop-blur shadow-sm"
-                >
-                  <div className="font-display text-2xl font-extrabold">
-                    {s.value}
-                  </div>
-                  <div className="mt-1 text-xs uppercase tracking-wide text-white/80">
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="grid gap-4 md:grid-cols-2">
-              <div className="rounded-2xl border border-white/15 bg-white/8 p-4 text-xs text-white/85 backdrop-blur shadow-sm">
-                Open from seven thirty on weekdays, eight on Saturdays and nine on Sundays.
-              </div>
-              <div className="rounded-2xl border border-white/15 bg-white/8 p-4 text-xs text-white/85 backdrop-blur shadow-sm">
-                Find us at fourteen Market Street near the main square.
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Highlights */}
+      {/* Why choose */}
       <section className="mx-auto max-w-7xl px-4 py-16">
         <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
           Why guests choose Hearth and Bean
@@ -141,47 +115,10 @@ export default function Home() {
               key={h.title}
               className="group rounded-2xl border border-neutral-200 bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:border-amber-300 hover:shadow-md"
             >
-              <h3 className="text-base font-semibold tracking-tight">
-                {h.title}
-              </h3>
+              <h3 className="text-base font-semibold tracking-tight">{h.title}</h3>
               <p className="mt-2 text-sm text-neutral-700">{h.text}</p>
             </article>
           ))}
-        </div>
-      </section>
-
-      {/* Callouts */}
-      <section className="mx-auto max-w-7xl px-4 pb-16">
-        <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-3xl border border-neutral-200 bg-white/90 p-6 shadow-sm md:p-8">
-            <h2 className="font-display text-2xl font-bold tracking-tight">
-              Order ahead on busy mornings
-            </h2>
-            <p className="mt-3 text-sm text-neutral-700">
-              The takeaway page shows how guests can build a simple coffee and pastry order.
-            </p>
-            <Link
-              href="/takeaway"
-              className="mt-5 inline-block rounded-xl bg-neutral-900 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-neutral-800"
-            >
-              Try the takeaway demo
-            </Link>
-          </div>
-
-          <div className="rounded-3xl border border-neutral-200 bg-white/90 p-6 shadow-sm md:p-8">
-            <h2 className="font-display text-2xl font-bold tracking-tight">
-              Show a simple online shop
-            </h2>
-            <p className="mt-3 text-sm text-neutral-700">
-              The merch page demonstrates ecommerce capability.
-            </p>
-            <Link
-              href="/shop"
-              className="mt-5 inline-block rounded-xl border border-neutral-900 px-5 py-3 text-sm font-semibold text-neutral-900 shadow-sm transition hover:-translate-y-0.5 hover:bg-neutral-900 hover:text-white"
-            >
-              Visit the merch demo
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -216,7 +153,7 @@ export default function Home() {
       {/* Gallery */}
       <section className="mx-auto max-w-7xl px-4 pb-20">
         <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
-          Inside Hearth and Bean
+          Inside our cafe
         </h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {gallery.map((src, index) => (
