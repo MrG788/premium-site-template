@@ -1,26 +1,16 @@
 import "../styles/globals.css";
 import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-export default function MyApp({ Component, pageProps }) {
+export default function App({ Component, pageProps }) {
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "/aos/aos.js";
-    script.onload = () => {
-      if (window.AOS) {
-        window.AOS.init({
-          duration: 800,
-          easing: "ease-out-cubic",
-          once: true,
-        });
-      }
-    };
-    document.body.appendChild(script);
+    AOS.init({
+      once: true,
+      duration: 800,
+      easing: "ease-out-cubic",
+    });
   }, []);
 
-  return (
-    <>
-      <link rel="stylesheet" href="/aos/aos.css" />
-      <Component {...pageProps} />
-    </>
-  );
+  return <Component {...pageProps} />;
 }
